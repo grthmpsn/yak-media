@@ -1,0 +1,138 @@
+export interface Project {
+    slug: string;
+    title: string;
+    brand: string;
+    services: string[];
+    img: string;
+    year: number;
+    vimeoId?: string;
+    description: string;
+    challenge: string;
+    approach: string;
+    awards?: string[];
+}
+
+export const projects: Project[] = [
+    {
+        slug: "une-belle-trace",
+        title: "Une Belle Trace",
+        brand: "Arc'teryx",
+        services: ["Production", "Story Research", "Story Building"],
+        img: "https://images.squarespace-cdn.com/content/v1/5db2f9bc79defe33dc53dce0/1c3725f4-d5c5-429a-b9cf-3fb2045436c1/Charley-Radcliffe-UTMG-small-3.jpg?format=2500w",
+        year: 2023,
+        vimeoId: "817278847",
+        description: "A feature documentary following mountain guides Frederic Degoulet and Benjamin Ribeyre on the first-ever circumnavigation of the Mer de Glace. Produced for Arc'teryx France, the film captures the raw beauty and fragility of one of the Alps' most iconic glaciers.",
+        challenge: "Filming in extreme glacial conditions over multiple days while maintaining a sustainable production footprint and capturing the emotional weight of a disappearing landscape.",
+        approach: "Yak Media led story research and development from concept through to delivery, working closely with Arc'teryx France to build a narrative that balanced adventure with environmental urgency. Katie coordinated the entire production, from sourcing the right crew to managing logistics across remote alpine terrain.",
+        awards: ["Kendal Mountain Festival — Best Adventure Film", "Banff Mountain Film Festival — Official Selection"],
+    },
+    {
+        slug: "andrew-king-x-pro",
+        title: "Andrew King X Pro",
+        brand: "Gore-Tex",
+        services: ["Filming", "Editing"],
+        img: "https://images.squarespace-cdn.com/content/v1/5db2f9bc79defe33dc53dce0/e457980d-3a66-4017-8200-e6f4c9f81950/DSC08536.JPG?format=2500w",
+        year: 2024,
+        vimeoId: "1138159169",
+        description: "A brand film showcasing mountaineer Andrew King testing Gore-Tex Pro gear across the most demanding alpine routes in the Mont Blanc massif. Shot in partnership with Gore-Tex to demonstrate product performance through authentic athletic storytelling.",
+        challenge: "Capturing high-altitude climbing sequences that feel genuinely immersive while meeting the technical demands of product-focused brand content.",
+        approach: "Katie led the filming and post-production, working with a lean crew embedded directly into Andrew's climbing schedule. The edit balanced cinematic mountain visuals with natural, unscripted moments that let both the athlete and the product speak for themselves.",
+    },
+    {
+        slug: "tom-evans-mile-after-mile",
+        title: "Tom Evans — Mile after Mile",
+        brand: "Garmin",
+        services: ["Story Building", "Filming", "Editing"],
+        img: "https://images.squarespace-cdn.com/content/v1/5db2f9bc79defe33dc53dce0/1694613975552-PJ3Z1F3Y8OI05PO2OVV7/A7404522_edited.jpg?format=2500w",
+        year: 2023,
+        vimeoId: "857885691",
+        description: "An intimate portrait of trail running legend Tom Evans as he prepares for UTMB in Tignes, French Alps. Produced in collaboration with Garmin and the Santara Group, the film explores the mental and physical demands of ultra-distance running.",
+        challenge: "Creating a film that goes beyond typical athlete profiles to reveal the vulnerability and determination behind elite performance, all within a tight production window.",
+        approach: "Yak Media built the story arc from the ground up, spending time with Tom to uncover the personal narrative behind his training. Katie directed the filming across mountain trails and edited the final piece, weaving together running footage with candid interviews.",
+    },
+    {
+        slug: "alpine-yellow",
+        title: "Alpine Yellow",
+        brand: "Yeti",
+        services: ["Production"],
+        img: "https://images.squarespace-cdn.com/content/v1/5db2f9bc79defe33dc53dce0/1677080365632-B8CN6Q2BXQ2USQ9VYSIT/Yeti_alpineyellow.png?format=2500w",
+        year: 2022,
+        description: "A campaign film for Yeti Coolers' Alpine Collection featuring legendary climbers Conrad Anker, Kris Erickson, and Leo Houlding climbing in the Mont Blanc massif. The film captures the spirit of alpine adventure that inspired the collection's signature yellow colourway.",
+        challenge: "Coordinating a multi-day shoot in the Mont Blanc massif with three high-profile athletes, each with different schedules and climbing objectives, while meeting Yeti's brand standards for a global campaign.",
+        approach: "Katie managed the full production — from location scouting and permits to crew coordination and on-mountain logistics. Her local knowledge of the Chamonix valley and established relationships with mountain professionals ensured the shoot ran smoothly despite unpredictable alpine conditions.",
+    },
+    {
+        slug: "the-apprentice",
+        title: "The Apprentice",
+        brand: "Arc'teryx",
+        services: ["Production", "Filming", "Editing"],
+        img: "https://images.squarespace-cdn.com/content/v1/5db2f9bc79defe33dc53dce0/e6b457de-4882-40af-9b07-89b0a99f8a47/Apprentice_05.jpg?format=2500w",
+        year: 2024,
+        vimeoId: "1039964273",
+        description: "A documentary following the next generation of mountain guides as they learn their craft in the Chamonix valley. Produced for Arc'teryx, the film captures the traditions, risks, and rewards of becoming an alpine professional.",
+        challenge: "Gaining trust and access to the private world of guide training while creating content that resonates with both the climbing community and a broader brand audience.",
+        approach: "Yak Media embedded with trainee guides over several months, capturing real training moments rather than staged sequences. Katie led production and filming, with the final edit balancing technical climbing with the human story of mentorship and ambition.",
+    },
+    {
+        slug: "re-action-collective",
+        title: "Re-Action Collective",
+        brand: "Coldhouse Collective",
+        services: ["Production", "Story Building"],
+        img: "https://images.squarespace-cdn.com/content/v1/5db2f9bc79defe33dc53dce0/1731320379532-4U74S91UU7X6LYDMHBG5/RA_08.png?format=2500w",
+        year: 2024,
+        vimeoId: "1000696804",
+        description: "A series documenting the Coldhouse Collective's environmental activism through outdoor sports. The films showcase athletes using their platform to drive meaningful change, from tree planting initiatives to community action projects.",
+        challenge: "Telling environmental stories that avoid preachiness while inspiring action, and connecting the dots between outdoor recreation and environmental responsibility.",
+        approach: "Katie developed the story framework and managed production across multiple locations, ensuring each film in the series maintained a consistent tone while highlighting different aspects of the collective's work.",
+    },
+    {
+        slug: "the-commentator",
+        title: "The Commentator",
+        brand: "The North Face",
+        services: ["Production", "Filming", "Editing"],
+        img: "https://images.squarespace-cdn.com/content/v1/5db2f9bc79defe33dc53dce0/1572437775657-U0YUEQ9MAWIVQ1NKZER1/UTMB-6.jpg?format=2500w",
+        year: 2024,
+        vimeoId: "988790674",
+        description: "A character-driven film following one of trail running's most recognisable voices — the race commentator who brings events to life. A celebration of the unsung heroes behind the sport.",
+        challenge: "Creating a compelling narrative around a subject who is usually behind the microphone rather than in front of the camera, while capturing the energy and emotion of live race events.",
+        approach: "Yak Media handled production, filming, and editing. Katie identified the story potential, filmed across multiple race events, and crafted an edit that captures both the chaos of race day and the quieter personal moments.",
+    },
+    {
+        slug: "hood-to-trail",
+        title: "Hood to Trail",
+        brand: "Columbia",
+        services: ["Production", "Story Research", "Filming"],
+        img: "https://images.squarespace-cdn.com/content/v1/5db2f9bc79defe33dc53dce0/1572438150561-0OVMHOTE4IDRWWF32KND/hoodtotrail-3.jpg?format=2500w",
+        year: 2018,
+        vimeoId: "292578436",
+        description: "A trail running film produced in partnership with Columbia Sportswear, exploring the connection between urban life and mountain trails. The film follows runners transitioning from city streets to alpine singletrack.",
+        challenge: "Bridging the gap between urban and mountain environments visually and narratively, while creating content that speaks to both experienced trail runners and newcomers to the sport.",
+        approach: "Katie researched and developed the concept, managed production logistics across city and mountain locations, and directed the filming to ensure a seamless visual transition between the two worlds.",
+    },
+    {
+        slug: "falling-mountains",
+        title: "Falling Mountains",
+        brand: "Mammut",
+        services: ["Production", "Story Research", "Editing"],
+        img: "https://images.squarespace-cdn.com/content/v1/5db2f9bc79defe33dc53dce0/1628152945302-N1BP4TEY2WAMF2OGHAHE/Falling-Mountains_1.jpg?format=2500w",
+        year: 2021,
+        vimeoId: "507058381",
+        description: "A documentary exploring the impact of climate change on alpine environments. The film examines how warming temperatures are fundamentally altering the mountains that climbers and communities depend on.",
+        challenge: "Communicating the scientific reality of glacial retreat and rockfall increase through human stories rather than data, while maintaining the urgency the subject demands.",
+        approach: "Yak Media led extensive story research, interviewing scientists, mountain guides, and local communities. Katie managed the production and edited the final film, creating a piece that connects the personal to the planetary.",
+        awards: ["Kendal Mountain Festival — Best Environmental Film"],
+    },
+    {
+        slug: "trophy-hunter",
+        title: "Trophy Hunter",
+        brand: "Andy Parkin",
+        services: ["Story Research", "Filming", "Editing"],
+        img: "https://images.squarespace-cdn.com/content/v1/5db2f9bc79defe33dc53dce0/1572527761500-JI55W8SIHR6QTUHBPBX9/val-veni-copy.jpg?format=2500w",
+        year: 2020,
+        vimeoId: "468566294",
+        description: "An intimate documentary portrait of legendary climber and artist Andy Parkin, exploring his life in Chamonix after a near-fatal climbing accident. The film reveals how art became his way of processing the mountains he could no longer climb.",
+        challenge: "Earning the trust of a deeply private subject and finding the visual language to represent both his climbing past and artistic present.",
+        approach: "Katie spent months building a relationship with Andy before filming began. She led story research, directed the filming in his studio and around Chamonix, and edited the film with a sensitivity that honours both the man and his art.",
+        awards: ["Sheffield Adventure Film Festival — Best Short Film", "Torino Mountain Film Festival — Jury Prize"],
+    },
+];
