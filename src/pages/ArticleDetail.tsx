@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Clock, ArrowRight } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';

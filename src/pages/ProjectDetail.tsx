@@ -1,10 +1,8 @@
-import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Play } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { projects } from '../data/projects';
 import { Section } from '../components/Section';
-import { Button } from '../components/Button';
 
 export function ProjectDetail() {
     const { slug } = useParams<{ slug: string }>();

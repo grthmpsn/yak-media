@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Play, Film, Map, Heart, Clock, Camera, Scissors, Send } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
