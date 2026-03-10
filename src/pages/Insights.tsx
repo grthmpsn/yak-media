@@ -3,8 +3,14 @@ import { ArrowRight, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Section } from '../components/Section';
 import { articles } from '../data/articles';
+import { usePageSEO } from '../hooks/usePageSEO';
 
 export function Insights() {
+    usePageSEO({
+        title: 'Insights — Storytelling, Brand Strategy & Sustainable Production',
+        description: 'Expert perspectives on branded film, storytelling, and sustainable production from Yak Media. Advice for marketing leaders and brand managers.',
+    });
+
     return (
         <div className="flex flex-col w-full">
             {/* Page Header */}
@@ -37,6 +43,7 @@ export function Insights() {
                                 src={articles[0].heroImg}
                                 alt={articles[0].title}
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                loading="eager"
                             />
                         </div>
                         <div className="p-8 lg:p-12 flex flex-col justify-center">
@@ -79,6 +86,7 @@ export function Insights() {
                                         <img
                                             src={article.heroImg}
                                             alt={article.title}
+                                            loading="lazy"
                                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                         />
                                     </div>

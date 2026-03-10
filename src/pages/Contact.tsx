@@ -1,8 +1,14 @@
 import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
 import { Button } from '../components/Button';
+import { usePageSEO } from '../hooks/usePageSEO';
 
 export function Contact() {
+    usePageSEO({
+        title: 'Contact — Start a Project',
+        description: 'Get in touch with Yak Media to discuss your brand film, documentary, or production project. Based in Chamonix-Mont-Blanc, working worldwide.',
+    });
+
     return (
         <div className="flex flex-col w-full">
             <section className="pt-40 pb-32 px-6 md:px-12 lg:px-24">

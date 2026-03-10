@@ -7,6 +7,7 @@ import { Button } from '../components/Button';
 import { Showreel } from '../components/Showreel';
 import { projects } from '../data/projects';
 import { articles } from '../data/articles';
+import { usePageSEO } from '../hooks/usePageSEO';
 
 const brands = [
     { name: "Arc'teryx", logo: "/logos/arcteryx.svg" },
@@ -63,6 +64,11 @@ export function Home() {
     const workRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
 
+    usePageSEO({
+        title: 'Yak Media | Brand Film Production, Chamonix',
+        description: 'Award-winning brand film production based in Chamonix-Mont-Blanc. Story development, filming, editing, and sustainable production for outdoor and adventure brands.',
+    });
+
     const filteredProjects = activeFilter === "All"
         ? projects
         : projects.filter(p => p.services.includes(activeFilter));
@@ -98,7 +104,7 @@ export function Home() {
                         <motion.img
                             key={heroIndex}
                             src={heroImages[heroIndex].img}
-                            alt=""
+                            alt={`${heroImages[heroIndex].title} — ${heroImages[heroIndex].brand}`}
                             initial={{ opacity: 0, scale: 1.1 }}
                             animate={{ opacity: heroVideoLoaded ? 0 : 0.5, scale: 1.05 }}
                             exit={{ opacity: 0 }}
@@ -130,27 +136,42 @@ export function Home() {
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8"
                     >
                         <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                        <span className="text-sm font-medium tracking-wide text-white/80">Chamonix-Mont-Blanc</span>
+                        <span className="text-sm font-medium tracking-wide text-white/80">Film Production &middot; Chamonix-Mont-Blanc</span>
                     </motion.div>
 
                     <motion.h1
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-                        className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter mb-6 leading-[0.9]"
+                        className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tighter mb-6 leading-[0.95]"
                     >
-                        YAK <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-white/40 italic font-serif font-light">MEDIA.</span>
+                        Brand Films That <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-light to-accent italic font-serif font-light">Move People.</span>
                     </motion.h1>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-                        className="text-xl md:text-2xl text-white/70 max-w-2xl text-center mb-12 font-light"
+                        className="text-xl md:text-2xl text-white/70 max-w-2xl text-center mb-6 font-light"
                     >
-                        Turning ideas into compelling stories and engaging visual campaigns, sustainably.
+                        Award-winning story development, filming, editing, and production for outdoor and adventure brands — delivered sustainably from the heart of the Alps.
                     </motion.p>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+                        className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-white/40 mb-10"
+                    >
+                        <span>Story Development</span>
+                        <span className="text-white/20">/</span>
+                        <span>Production</span>
+                        <span className="text-white/20">/</span>
+                        <span>Filming</span>
+                        <span className="text-white/20">/</span>
+                        <span>Editing</span>
+                    </motion.div>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -190,12 +211,13 @@ export function Home() {
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
                             <img
                                 src="https://images.squarespace-cdn.com/content/v1/5db2f9bc79defe33dc53dce0/1628074522165-MQ8SDS296KGX9HI864HB/KTM_midi.jpg?format=1500w"
-                                alt="Katie Moore"
+                                alt="Katie Moore, founder of Yak Media, at the Aiguille du Midi in Chamonix"
+                                loading="lazy"
                                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100 group-hover:scale-105"
                             />
                             <div className="absolute bottom-6 left-6 z-20">
-                                <p className="font-display font-medium text-white/90 text-lg">Katie Moore & Mowgli</p>
-                                <p className="text-white/50 text-sm">Chamonix, France</p>
+                                <p className="font-display font-medium text-white/90 text-lg">Katie Moore</p>
+                                <p className="text-white/50 text-sm">Aiguille du Midi, Chamonix, France</p>
                             </div>
                         </div>
 
@@ -303,7 +325,8 @@ export function Home() {
                         >
                             <img
                                 src={brand.logo}
-                                alt={brand.name}
+                                alt={`${brand.name} logo`}
+                                loading="lazy"
                                 className="max-h-full max-w-[130px] md:max-w-[150px] object-contain"
                             />
                         </motion.div>
@@ -358,7 +381,7 @@ export function Home() {
                                 >
                                     <Link to={`/work/${work.slug}`} className="group block">
                                         <div className="aspect-[16/9] overflow-hidden rounded-2xl mb-6 relative">
-                                            <img src={work.img} alt={work.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                            <img src={work.img} alt={`${work.title} for ${work.brand}`} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                                             <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
                                         </div>
                                         <div className="flex justify-between items-start">

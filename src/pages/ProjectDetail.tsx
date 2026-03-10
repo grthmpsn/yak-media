@@ -3,11 +3,29 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { projects } from '../data/projects';
 import { Section } from '../components/Section';
+import { usePageSEO } from '../hooks/usePageSEO';
 
 export function ProjectDetail() {
     const { slug } = useParams<{ slug: string }>();
     const projectIndex = projects.findIndex(p => p.slug === slug);
     const project = projects[projectIndex];
+
+    usePageSEO({
+        title: project ? `${project.title} — ${project.brand}` : 'Project Not Found',
+        description: project?.description || 'Project not found.',
+        ogImage: project?.img,
+        ogType: 'article',
+        jsonLd: project ? {
+            '@context': 'https://schema.org',
+            '@type': 'CreativeWork',
+            name: project.title,
+            description: project.description,
+            image: project.img,
+            creator: { '@type': 'Organization', name: 'Yak Media' },
+            dateCreated: String(project.year),
+            about: { '@type': 'Brand', name: project.brand },
+        } : undefined,
+    });
 
     if (!project) {
         return (

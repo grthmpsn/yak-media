@@ -3,11 +3,34 @@ import { ArrowLeft, Clock, ArrowRight } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import { Section } from '../components/Section';
 import { articles } from '../data/articles';
+import { usePageSEO } from '../hooks/usePageSEO';
 
 export function ArticleDetail() {
     const { slug } = useParams<{ slug: string }>();
     const articleIndex = articles.findIndex(a => a.slug === slug);
     const article = articles[articleIndex];
+
+    usePageSEO({
+        title: article?.title || 'Article Not Found',
+        description: article?.excerpt || 'Article not found.',
+        ogImage: article?.heroImg,
+        ogType: 'article',
+        jsonLd: article ? {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: article.title,
+            description: article.excerpt,
+            image: article.heroImg,
+            datePublished: article.date,
+            author: { '@type': 'Organization', name: 'Yak Media' },
+            publisher: {
+                '@type': 'Organization',
+                name: 'Yak Media',
+                url: 'https://yak-media.vercel.app',
+            },
+            articleSection: article.category,
+        } : undefined,
+    });
 
     if (!article) {
         return (
@@ -28,6 +51,7 @@ export function ArticleDetail() {
                     src={article.heroImg}
                     alt={article.title}
                     className="absolute inset-0 w-full h-full object-cover"
+                    loading="eager"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-black/30" />
             </section>

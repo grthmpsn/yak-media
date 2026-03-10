@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Section } from '../components/Section';
 import { projects } from '../data/projects';
+import { usePageSEO } from '../hooks/usePageSEO';
 
 const serviceFilters = ["All", "Production", "Story Research", "Story Building", "Editing", "Filming"] as const;
 
@@ -11,6 +12,11 @@ export function Work() {
     const [searchParams, setSearchParams] = useSearchParams();
     const initialFilter = searchParams.get('service') || 'All';
     const [activeFilter, setActiveFilter] = useState<string>(initialFilter);
+
+    usePageSEO({
+        title: 'Our Work — Brand Films & Documentaries',
+        description: 'Explore our portfolio of brand films, documentaries, and adventure content. From Arc\'teryx to Gore-Tex, see how we tell stories sustainably from Chamonix.',
+    });
 
     const filteredProjects = activeFilter === "All"
         ? projects
@@ -82,7 +88,7 @@ export function Work() {
                             >
                                 <Link to={`/work/${work.slug}`} className="group block">
                                     <div className="aspect-[16/9] overflow-hidden rounded-2xl mb-5 relative">
-                                        <img src={work.img} alt={work.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                                        <img src={work.img} alt={`${work.title} — ${work.brand}`} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                                         <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
                                         <div className="absolute top-3 right-3">
                                             <span className="px-2.5 py-1 rounded-full text-xs bg-black/40 backdrop-blur-sm text-white/80 border border-white/10">
