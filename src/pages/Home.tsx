@@ -189,8 +189,8 @@ export function Home() {
                         <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-white/5 border border-white/10 relative">
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
                             <img
-                                src="https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                                alt="Katie in the mountains"
+                                src="https://images.squarespace-cdn.com/content/v1/5db2f9bc79defe33dc53dce0/1628074522165-MQ8SDS296KGX9HI864HB/KTM_midi.jpg?format=1500w"
+                                alt="Katie Moore"
                                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100 group-hover:scale-105"
                             />
                             <div className="absolute bottom-6 left-6 z-20">
